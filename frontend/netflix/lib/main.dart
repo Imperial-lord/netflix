@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:netflix/screens/ui/splash.dart';
+import 'package:netflix/routes.dart';
+import 'package:netflix/screens/ui/welcome.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,9 +12,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(brightness: Brightness.dark),
-        home: const Splash());
+      title: 'Netflix',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(fontFamily: 'Netflix Sans', brightness: Brightness.dark),
+      home: const Welcome(),
+      routes: routes,
+    );
   }
 }

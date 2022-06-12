@@ -11,10 +11,14 @@ class Splash extends StatefulWidget {
 class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    double width = MediaQuery.of(context).size.width * 0.5;
+    return Scaffold(
+      backgroundColor: Colors.black,
       body: Center(
-        child: Text('Netflix'),
-      ),
+          child: Image.asset(
+        'assets/icons/netflix-name.png',
+        width: width,
+      )),
     );
   }
 }
