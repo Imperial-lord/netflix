@@ -63,35 +63,37 @@ class _WelcomeState extends State<Welcome> {
             ),
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.all(20),
-          child: Center(
-            child: Column(
-              children: [
-                const SizedBox(height: 300),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30),
-                  child: Text(
-                    'Unlimited entertainment, one low price',
-                    style: Theme.of(context).textTheme.headline4?.copyWith(
-                        color: Colors.white, fontWeight: FontWeight.w500),
-                    textAlign: TextAlign.center,
+        SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.all(20),
+            child: Center(
+              child: Column(
+                children: [
+                  const SizedBox(height: 250),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 30),
+                    child: Text(
+                      'Unlimited entertainment, one low price',
+                      style: Theme.of(context).textTheme.headline4?.copyWith(
+                          color: Colors.white, fontWeight: FontWeight.w500),
+                      textAlign: TextAlign.center,
+                    ),
                   ),
-                ),
-                const SizedBox(height: 30),
-                Text(
-                  'All of Netflix, starting at just ₹ 149.',
-                  textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.titleMedium,
-                ),
-                const Spacer(),
-                ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        primary: Colors.red[700],
-                        padding: const EdgeInsets.all(20)),
-                    onPressed: getStartedHandler,
-                    child: const Center(child: Text('GET STARTED')))
-              ],
+                  const SizedBox(height: 30),
+                  Text(
+                    'All of Netflix, starting at just ₹ 149.',
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.titleMedium,
+                  ),
+                  const Spacer(),
+                  ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          primary: Colors.red[700],
+                          padding: const EdgeInsets.all(20)),
+                      onPressed: getStartedHandler,
+                      child: const Center(child: Text('GET STARTED')))
+                ],
+              ),
             ),
           ),
         )

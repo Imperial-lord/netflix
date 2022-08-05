@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:netflix/screens/auth/sign_up_password.dart';
+import 'package:netflix/widgets/auth/auth_field_light.dart';
 
 class SignUpEmail extends StatefulWidget {
   const SignUpEmail({Key? key}) : super(key: key);
@@ -19,7 +20,8 @@ class _SignUpEmailState extends State<SignUpEmail> {
   }
 
   void getStartedHandler() {
-    Navigator.pushNamed(context, SignUpPassword.id);
+    Navigator.pushNamedAndRemoveUntil(
+        context, SignUpPassword.id, (Route<dynamic> route) => false);
   }
 
   @override
@@ -58,19 +60,7 @@ class _SignUpEmailState extends State<SignUpEmail> {
                         ?.copyWith(color: Colors.black),
                   ),
                   const SizedBox(height: 40),
-                  CupertinoTextField(
-                    controller: emailController,
-                    padding: const EdgeInsets.all(20),
-                    style: const TextStyle(fontFamily: 'Netflix Sans'),
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        border: Border.all(color: Colors.blue),
-                        borderRadius: BorderRadius.circular(5)),
-                    cursorColor: Colors.grey,
-                    placeholder: 'Email',
-                    placeholderStyle: const TextStyle(
-                        fontFamily: 'Netflix Sans', color: Colors.grey),
-                  ),
+                  authFieldLight('Email', emailController, Colors.blue),
                   const SizedBox(height: 20),
                   ElevatedButton(
                       style: ElevatedButton.styleFrom(

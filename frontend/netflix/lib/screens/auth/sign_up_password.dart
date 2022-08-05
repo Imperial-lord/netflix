@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:netflix/screens/auth/sign_in.dart';
 import 'package:netflix/screens/auth/sign_up_payment.dart';
 
+import '../../widgets/auth/auth_field_light.dart';
+
 class SignUpPassword extends StatefulWidget {
   const SignUpPassword({Key? key}) : super(key: key);
 
@@ -17,11 +19,13 @@ class _SignUpPasswordState extends State<SignUpPassword> {
   TextEditingController passwordController = TextEditingController();
 
   void signInHandler() {
-    Navigator.pushNamed(context, SignIn.id);
+    Navigator.pushNamedAndRemoveUntil(
+        context, SignIn.id, (Route<dynamic> route) => false);
   }
 
   void continueHandler() {
-    Navigator.pushNamed(context, SignUpPayment.id);
+    Navigator.pushNamedAndRemoveUntil(
+        context, SignUpPayment.id, (Route<dynamic> route) => false);
   }
 
   @override
@@ -61,36 +65,9 @@ class _SignUpPasswordState extends State<SignUpPassword> {
                       ?.copyWith(color: Colors.black),
                 ),
                 const SizedBox(height: 20),
-                CupertinoTextField(
-                  controller: emailController,
-                  padding: const EdgeInsets.all(20),
-                  style: const TextStyle(fontFamily: 'Netflix Sans'),
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      border: Border.all(color: Colors.green),
-                      borderRadius: BorderRadius.circular(5)),
-                  cursorColor: Colors.grey,
-                  placeholder: 'Email',
-                  placeholderStyle: const TextStyle(
-                      fontFamily: 'Netflix Sans', color: Colors.grey),
-                ),
+                authFieldLight('Email', emailController, Colors.green),
                 const SizedBox(height: 20),
-                CupertinoTextField(
-                  controller: passwordController,
-                  padding: const EdgeInsets.all(20),
-                  obscureText: true,
-                  autocorrect: false,
-                  enableSuggestions: false,
-                  style: const TextStyle(fontFamily: 'Netflix Sans'),
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      border: Border.all(color: Colors.blue),
-                      borderRadius: BorderRadius.circular(5)),
-                  cursorColor: Colors.grey,
-                  placeholder: 'Password',
-                  placeholderStyle: const TextStyle(
-                      fontFamily: 'Netflix Sans', color: Colors.grey),
-                ),
+                authFieldLight('Password', passwordController, Colors.blue),
                 const SizedBox(height: 20),
                 ElevatedButton(
                     style: ElevatedButton.styleFrom(

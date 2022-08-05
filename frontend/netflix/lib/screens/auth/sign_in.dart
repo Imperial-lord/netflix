@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:netflix/screens/auth/sign_up_email.dart';
-import 'package:netflix/screens/home/home.dart';
+import 'package:netflix/screens/management/management.dart';
 import 'package:netflix/widgets/auth/auth_field.dart';
 
 class SignIn extends StatefulWidget {
@@ -26,7 +26,7 @@ class _SignInState extends State<SignIn> {
 
   void signInHandler() {
     Navigator.pushNamedAndRemoveUntil(
-        context, Home.id, (Route<dynamic> route) => false);
+        context, Management.id, (Route<dynamic> route) => false);
   }
 
   @override

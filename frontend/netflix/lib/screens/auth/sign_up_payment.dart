@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:netflix/models/plan.dart';
-import 'package:netflix/screens/home/home.dart';
+import 'package:netflix/screens/management/management.dart';
 
 class SignUpPayment extends StatefulWidget {
   const SignUpPayment({Key? key}) : super(key: key);
@@ -24,7 +24,8 @@ class _SignUpPaymentState extends State<SignUpPayment> {
 
   void signOutHandler() {}
   void startWatchingHandler() {
-    Navigator.pushNamed(context, Home.id);
+    Navigator.pushNamedAndRemoveUntil(
+        context, Management.id, (Route<dynamic> route) => false);
   }
 
   @override
