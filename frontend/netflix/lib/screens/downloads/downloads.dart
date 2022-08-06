@@ -17,7 +17,7 @@ class _DownloadsState extends State<Downloads> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: netflixAppBar(
+      appBar: appBar(context,
           Text('Downloads', style: Theme.of(context).textTheme.titleLarge)),
       body: SingleChildScrollView(
         child: Padding(

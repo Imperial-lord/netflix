@@ -36,7 +36,7 @@ class _HomeState extends State<Home> {
       backgroundColor: Colors.black,
       extendBodyBehindAppBar: true,
       appBar: _scrollPosition <= navScrollLimit
-          ? netflixAppBar(Image.asset('assets/icons/netflix.png', height: 32))
+          ? appBar(context, Image.asset('assets/icons/netflix.png', height: 32))
           : PreferredSize(
               preferredSize: const Size.fromHeight(double.maxFinite),
               child: navBar(context, true)),

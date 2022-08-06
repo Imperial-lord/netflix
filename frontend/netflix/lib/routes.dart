@@ -9,12 +9,15 @@ import 'package:netflix/screens/games/games.dart';
 import 'package:netflix/screens/home/home.dart';
 import 'package:netflix/screens/management/management.dart';
 import 'package:netflix/screens/new_and_hot/new_and_hot.dart';
+import 'package:netflix/screens/profile/profiles_and_more.dart';
 import 'package:netflix/screens/subscriptions/subscriptions.dart';
 import 'package:netflix/screens/ui/splash.dart';
+import 'package:netflix/screens/ui/welcome.dart';
 
 Map<String, Widget Function(BuildContext)> routes = {
-  // General
+  // UI
   Splash.id: (context) => const Splash(),
+  Welcome.id: (context) => const Welcome(),
 
   // Auth
   SignIn.id: (context) => const SignIn(),
@@ -42,4 +45,7 @@ Map<String, Widget Function(BuildContext)> routes = {
 
   // Downloads
   Downloads.id: (context) => const Downloads(),
+
+  // Profile
+  ProfilesAndMore.id: (context) => const ProfilesAndMore(),
 };

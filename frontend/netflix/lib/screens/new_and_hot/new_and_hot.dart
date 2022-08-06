@@ -15,7 +15,7 @@ class _NewAndHotState extends State<NewAndHot> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: netflixAppBarNotifications(
+      appBar: appBarNotifications(context,
           Text('New & Hot', style: Theme.of(context).textTheme.titleLarge)),
     );
   }

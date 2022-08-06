@@ -14,7 +14,7 @@ class _GamesState extends State<Games> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: netflixAppBar(
+      appBar: appBar(context,
           Text('Games', style: Theme.of(context).textTheme.titleLarge)),
       body: SingleChildScrollView(
         child: Padding(
